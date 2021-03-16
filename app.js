@@ -9,7 +9,7 @@ require('dotenv/config');
 
 // Step 2 - connect to the database
  
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect('mongodb+srv://ofer3k:ofer3k1998@react-crud.ddpml.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true }, err => {
         console.log('connected')
     });
@@ -75,7 +75,7 @@ app.post('/', upload.single('image'), (req, res, next) => {
 
 // Step 9 - configure the server's port
  
-var port = process.env.PORT || '3001'
+var port = process.env.PORT || 8080
 app.listen(port, err => {
     if (err)
         throw err
